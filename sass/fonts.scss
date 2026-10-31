@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(fonts/Montserrat-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat Bold'), local('Montserrat-Bold'), url(fonts/Montserrat-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'gomarice_round_pop';
+    font-style: normal;
+    font-weight: normal;
+    src: local('gomarice_round_pop'), url(fonts/gomarice_round_pop.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Oleo-Script-Swash-Caps';
+    src:  url(fonts/Oleo-Script-Swash-Caps.ttf.woff) format('woff'),
+    url(fonts/Oleo-Script-Swash-Caps.ttf.svg#Oleo-Script-Swash-Caps) format('svg'),
+    url(fonts/Oleo-Script-Swash-Caps.ttf.eot),
+    url(fonts/Oleo-Script-Swash-Caps.eot?#iefix) format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+

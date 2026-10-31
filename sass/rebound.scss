@@ -1,0 +1,31 @@
+$color-background: #422118;
+$color-foreground: #f6bb6d; //#daa349;
+$color-bordercolor: #882e14;
+$color-foreground-transp: rgba(218, 163, 73, 0.2);
+$color-hover: #de862c;
+$color-link: #daa349;
+
+$sans-serif: Montserrat, 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+
+// Responsive breaks
+$break-extra-small: 575px;
+$break-small: 576px;
+$break-medium: 768px;
+$break-large: 992px;
+$break-extra-large: 1200px;
+
+// Responsive breaks
+$break-extra-small: 575px;
+$break-small: 576px;
+$break-medium: 768px;
+$break-large: 992px;
+$break-extra-large: 1200px;
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+       -moz-transition: $args;
+            transition: $args;
+}
+
+@import 'rebound/base.scss';
+@import 'rebound/layout.scss';

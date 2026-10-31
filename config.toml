@@ -1,0 +1,44 @@
+# The URL the site will be built for
+base_url = "https://rebound.band"
+
+title = "Rebound"
+description = "Soul, Pop et Rock"
+
+default_language = "fr"
+
+author = "Gérald Niel"
+
+generate_sitemap = false 
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = false
+
+[link_checker]
+internal_level = "warn"
+
+
+[extra]
+# Put all your custom variables here
+
+image = "banniere.jpg"
+figcaption = "Photos par Marc Walter"
+ogimage = "banniere-rebound.jpg"
+
+contact_links = [
+    { title = "E-Mail", url = "mailto:contact@rebound.band", iconset = "fas", icon = "mail" },
+    { title = "Facebook", url = "https://www.facebook.com/profile.php?id=61576674766075", icon = "facebook" },
+    { title = "Instagram", url = "https://www.instagram.com/rebound_soul_pop_rock/", icon = "instagram" },
+    { title = "TikTok", url = "https://www.tiktok.com/@rebound_soul_pop_rock", iconset = "fas", icon = "tiktok" },
+    { title = "Youtube", url="https://www.youtube.com/@ReboundSoulPopRock", icon = "youtube"},
+    { title = "Mastodon", url = "https://piaille.fr/@rebound", icon = "mastodon" },
+    { title = "Peertube", url = "https://peertube.gegeweb.eu/c/rebound/videos", iconset = "fa", icon = "peertube" }
+]
+

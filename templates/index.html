@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns/website#"  lang="fr-FR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Soul, Pop, Rock">
+        <meta name="description" content="Nous sommes Rebound, un groupe essonnien de compositions et reprises originaire de Marcoussis (91, France). ">
+        <meta name="author" content="{{ config.title }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{{ config.title }} {{ config.description }}</title>
+
+        <!-- Open Graph protocol -->
+        <meta property="og:title" content="{{ config.title }}" />
+        <meta property="og:description" content="{{ config.description }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:url" content="{{ get_url(path='') }}">
+        <meta property="og:image" content="{{ get_url(path='images/' ~ config.extra.ogimage ) }}">
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="2659" />
+        <meta property="og:image:height" content="984" />
+        <meta property="og:image:alt" content="Rebound, Fête de la musique, Monthléry (91,France), 21 juin 2025 " />
+
+
+        <link rel="stylesheet" href="{{ get_url(path='fonts.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='materialize.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='rebound.css') }}">
+
+        <link rel="icon" type="image/png" href="{{ get_url(path='favicon.ico') }}" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#" class="brand-logo">
+                            <h1>
+                                <img class="sitelogo" src="{{ get_url(path='images/svg/rebound.svg') }}" alt="Rebound" title="Rebound" /> {{ config.description }}
+                            </h1>                            
+                        </a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="#top">Accueil</a></li>
+                            {% for post in section.pages %}
+                            <li><a href="#{{ post.extra.anchor }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <section id="top">
+                    <h1>
+                        <img src="{{ get_url(path='images/svg/logo.svg') }}" class="logo" alt="Logo Rebound" /><br/>
+                        {{ config.title }}
+                    </h1>
+                    <h2>
+                        {{config.description}}
+                    </h2>
+
+                    <figure>
+                        <img src="{{ get_url(path='images/' ~ config.extra.image ) }}" class="accueil" alt="Rebound" />
+                        <figcaption class="accueil">
+                            {{ config.extra.figcaption }} (<a href="https://news.miaousland.fr/">Miaousland</a>)
+                        </figcaption>
+                    </figure>
+
+                    {{ section.content | safe }} 
+                </section>
+
+                {% for post in section.pages %}
+                <section id="{{ post.extra.anchor }}">
+                    <h2>{{ post.title }}</h2>
+                    {% if post.extra.anchor == "band" %}
+                        {% for member in post.extra.group_members %}
+                        <div class="band_member">
+                            <figure class="band_member">
+                                <img src="{{ get_url(path='images/band/' ~ member.image)}}" alt="{{member.nom ~ ' – ' ~ member.instrument}}" title="{{member.nom ~ ' – ' ~ member.instrument}}" />
+                                <figcaption>
+                                    <h4>{{ member.nom }}</h4>
+                                    <p>{{ member.instrument }}</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        {% endfor %}
+                    <p style="font-size:small; font-style: italic;">Photos par Marc Walter (<a href="https://news.miaousland.fr/">Miaousland</a>)</p>
+                    {% else %}
+                    {{ post.content | safe }}
+                    {% endif %}
+                </section>
+                {% endfor %}
+                {% if config.extra.contact_links %}
+                <section id="contact" class="links">
+                    <h2>Contact</h2>
+                    <ul class="links">
+                        {% for link in config.extra.contact_links %}
+                        <li class="links">
+                            <a rel="me" href="{{ link.url }}" title="{{ link.title }}">
+                                <span class="screen-reader-text">{{ link.title }}</span>
+                                <svg class="icon" role="img">
+                                    <use href="#{{ link.icon }}" xlink:href="#{{ link.icon }}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                {% endif %}
+            </div>
+        </main>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    &copy;2025 <a href="#">{{ config.title }}</a> <span class="right">Fait par {{ config.author }} avec <a href="https://www.getzola.org" title="Zola, Your one-stop static site engine">Zola</a></span>
+                </div>
+            </div>
+        </footer>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="youtube" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+            </symbol>
+            <symbol id="tiktok" viewBox="0 0 16 16">
+                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
+            </symbol>
+            <symbol id="facebook" viewBox="0 0 16 16">
+                <path d="M 16,8.049 C 16,3.603 12.418,-0.001 8,-0.001 3.58,0 -0.002,3.603 -0.002,8.05 c 0,4.017 2.926,7.347 6.75,7.951 V 10.376 H 4.718 V 8.05 H 6.75 V 6.275 c 0,-2.017 1.195,-3.131 3.022,-3.131 0.876,0 1.791,0.157 1.791,0.157 v 1.98 h -1.009 c -0.993,0 -1.303,0.621 -1.303,1.258 v 1.51 h 2.218 l -0.354,2.326 H 9.25 V 16 C 13.074,15.396 16,12.066 16,8.049" />
+            </symbol>
+            <symbol id="instagram" viewBox="0 0 16 16">
+                <path d="M 8,0 C 5.829,0 5.556,0.01 4.703,0.048 3.85,0.088 3.269,0.222 2.76,0.42 A 3.9,3.9 0 0 0 1.343,1.343 3.9,3.9 0 0 0 0.42,2.76 C 0.222,3.268 0.087,3.85 0.048,4.7 0.01,5.555 0,5.827 0,8.001 c 0,2.172 0.01,2.444 0.048,3.297 0.04,0.852 0.174,1.433 0.372,1.942 0.205,0.526 0.478,0.972 0.923,1.417 0.444,0.445 0.89,0.719 1.416,0.923 0.51,0.198 1.09,0.333 1.942,0.372 C 5.555,15.99 5.827,16 8,16 c 2.173,0 2.444,-0.01 3.298,-0.048 0.851,-0.04 1.434,-0.174 1.943,-0.372 a 3.9,3.9 0 0 0 1.416,-0.923 c 0.445,-0.445 0.718,-0.891 0.923,-1.417 0.197,-0.509 0.332,-1.09 0.372,-1.942 C 15.99,10.445 16,10.173 16,8 16,5.827 15.99,5.555 15.952,4.701 15.912,3.85 15.777,3.268 15.58,2.76 A 3.9,3.9 0 0 0 14.657,1.343 3.9,3.9 0 0 0 13.24,0.42 C 12.73,0.222 12.148,0.087 11.297,0.048 10.443,0.01 10.172,0 7.998,0 Z M 7.283,1.442 h 0.718 c 2.136,0 2.389,0.007 3.232,0.046 0.78,0.035 1.204,0.166 1.486,0.275 0.373,0.145 0.64,0.319 0.92,0.599 0.28,0.28 0.453,0.546 0.598,0.92 0.11,0.281 0.24,0.705 0.275,1.485 0.039,0.843 0.047,1.096 0.047,3.231 0,2.135 -0.008,2.389 -0.047,3.232 -0.035,0.78 -0.166,1.203 -0.275,1.485 a 2.5,2.5 0 0 1 -0.599,0.919 c -0.28,0.28 -0.546,0.453 -0.92,0.598 -0.28,0.11 -0.704,0.24 -1.485,0.276 -0.843,0.038 -1.096,0.047 -3.232,0.047 -2.136,0 -2.39,-0.009 -3.233,-0.047 -0.78,-0.036 -1.203,-0.166 -1.485,-0.276 a 2.5,2.5 0 0 1 -0.92,-0.598 2.5,2.5 0 0 1 -0.6,-0.92 C 1.654,12.433 1.523,12.009 1.488,11.229 1.45,10.386 1.442,10.133 1.442,7.996 1.442,5.859 1.45,5.608 1.488,4.765 1.524,3.985 1.654,3.561 1.764,3.279 1.909,2.906 2.083,2.639 2.363,2.359 2.643,2.079 2.909,1.906 3.283,1.761 3.565,1.651 3.988,1.521 4.768,1.485 5.506,1.451 5.792,1.441 7.283,1.44 Z m 4.988,1.328 a 0.96,0.96 0 1 0 0,1.92 0.96,0.96 0 0 0 0,-1.92 m -4.27,1.122 a 4.109,4.109 0 1 0 0,8.217 4.109,4.109 0 0 0 0,-8.217 m 0,1.441 a 2.667,2.667 0 1 1 0,5.334 2.667,2.667 0 0 1 0,-5.334" />
+            </symbol>
+            <symbol id="peertube" viewBox="0 0 16 16">
+                <path d="M 2.00018,0 V 8.0007289 L 8.000002,4.0003733 Z M 8.000002,4.0003733 V 11.999627 L 13.99982,8.0007289 Z M 2.00018,8.0007289 V 16 l 5.999822,-3.998898 z" />
+            </symbol>
+            <symbol id="mail" viewBox="0 0 16 16">
+                <path d="M 2,2 A 2,2 0 0 0 0.05,3.555 L 8,8.414 15.95,3.555 A 2,2 0 0 0 14,2 Z M 0,11.8 V 4.698 L 5.803,8.244 Z M 6.761,8.83 0.191,12.856 A 2,2 0 0 0 2,14 H 8.256 A 4.5,4.5 0 0 1 8,12.5 4.49,4.49 0 0 1 9.606,9.054 L 9.239,8.829 8,9.586 Z M 16,9.671 V 4.697 l -5.803,3.546 0.338,0.208 A 4.5,4.5 0 0 1 12.5,8 c 1.414,0 2.675,0.652 3.5,1.671" />
+                <path d="m 15.834,12.244 c 0,1.168 -0.577,2.025 -1.587,2.025 -0.503,0 -1.002,-0.228 -1.12,-0.648 h -0.043 c -0.118,0.416 -0.543,0.643 -1.015,0.643 -0.77,0 -1.259,-0.542 -1.259,-1.434 v -0.529 c 0,-0.844 0.481,-1.4 1.26,-1.4 0.585,0 0.87,0.333 0.953,0.63 h 0.03 v -0.568 h 0.905 v 2.19 c 0,0.272 0.18,0.42 0.411,0.42 0.315,0 0.639,-0.415 0.639,-1.39 v -0.118 c 0,-1.277 -0.95,-2.326 -2.484,-2.326 h -0.04 c -1.582,0 -2.64,1.067 -2.64,2.724 v 0.157 c 0,1.867 1.237,2.654 2.57,2.654 h 0.045 c 0.507,0 0.935,-0.07 1.18,-0.18 v 0.731 C 13.42,15.925 12.996,16 12.402,16 H 12.358 C 10.438,16 9,14.82 9,12.646 V 12.432 C 9,10.36 10.421,9 12.485,9 h 0.035 c 2.12,0 3.314,1.43 3.314,3.034 z m -4.04,0.21 v 0.227 c 0,0.586 0.227,0.8 0.581,0.8 0.31,0 0.564,-0.17 0.564,-0.743 v -0.367 c 0,-0.516 -0.275,-0.708 -0.572,-0.708 -0.346,0 -0.573,0.245 -0.573,0.791" />
+            </symbol>
+            <symbol id="mastodon" viewBox="0 0 1536 1792">
+                <path d="M1503.302 1111.386c-22.579 116.159-202.224 243.284-408.55 267.921-107.588 12.837-213.519 24.636-326.476 19.455-184.728-8.463-330.494-44.092-330.494-44.092 0 17.983 1.11 35.106 3.328 51.12 24.015 182.308 180.772 193.228 329.261 198.32 149.872 5.127 283.321-36.951 283.321-36.951l6.157 135.491s-104.827 56.293-291.574 66.646c-102.974 5.66-230.836-2.59-379.759-42.009C65.529 1641.797 10.219 1297.502 1.482 948.17-1.11 844.449.485 746.646.49 664.847.5 307.631 234.539 202.924 234.539 202.924c118.011-54.199 320.512-76.99 531.033-78.71h5.173c210.52 1.721 413.152 24.511 531.157 78.71 0 0 234.04 104.706 234.04 461.923 0 0 2.935 263.556-32.64 446.539zm-243.429-418.827c0-88.4-21.711-159.35-67.71-210.618-46.63-51.972-107.687-78.613-183.47-78.613-87.699 0-154.104 33.703-198.002 101.121L768 576l-42.683-71.55c-43.907-67.42-110.313-101.124-198.003-101.124-75.792 0-136.849 26.642-183.47 78.614-45.21 51.973-67.718 122.219-67.718 210.618v432.53h171.359V705.273c0-88.498 37.234-133.415 111.713-133.415 82.35 0 123.63 53.283 123.63 158.646v229.788h170.35V730.505c0-105.363 41.272-158.646 123.62-158.646 74.478 0 111.715 44.917 111.715 133.415v419.816h171.358V692.56z"/>
+            </symbol>
+        </svg>
+    </body>
+</html>
