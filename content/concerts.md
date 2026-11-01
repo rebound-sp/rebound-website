@@ -17,6 +17,8 @@ Ouverture à 19h00, consommation obligatoire.
 
 L'[Usine](https://www.usinecafeconcert.com/) – Marcoussis, 91 – France
 
+![Affiche](/images/2027-01-29-usine.png "Affiche")
+
 ---
 
 ### Fête des châtaignes
