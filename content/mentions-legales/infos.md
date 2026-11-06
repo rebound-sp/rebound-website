@@ -14,6 +14,7 @@ template = "mentions-legales.html"
 - **Téléphone** : +33 6 86 28 44 48
 - **Contact** : [contact@rebound.band](mailto:contact@rebound.band) / [reboundsoulpoprock2026@gmail.com](mailto:reboundsoulpoprock2026@gmail.com)
 - **Direction de la publication** : REBOUND – M. PIGOU Laurent, président
+- **Webmaster** : [Gérald Niel](mailto:gerald@rebound.band) 
 
 ## Hébergement
 
