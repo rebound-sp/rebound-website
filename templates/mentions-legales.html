@@ -1,18 +1,46 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }} – {{ config.title }}</title>
-    <link rel="stylesheet" href="{{ get_url(path='fonts.css') }}">
-    <link rel="stylesheet" href="{{ get_url(path='materialize.css') }}">
-    <link rel="stylesheet" href="{{ get_url(path='rebound.css') }}">
-</head>
-<body>
-    <main class="container">
-        <p><a href="{{ get_url(path='') }}">← Retour à l’accueil</a></p>
-        <h1 style="font-size: 1.5em !important;">{{ page.title }}</h1>
-        {{ page.content | safe }}
-    </main>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ page.title }} – {{ config.title }}</title>
+        <link rel="stylesheet" href="{{ get_url(path='fonts.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='materialize.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='rebound.css') }}">
+        <link rel="icon" type="image/png" href="{{ get_url(path='favicon.ico') }}" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="{{ get_url(path='') }}" class="brand-logo">
+                            <h1>
+                                <img class="sitelogo" src="{{ get_url(path='images/svg/rebound.svg') }}" alt="Rebound" title="Rebound" /> {{ config.description }}
+                            </h1>                            
+                        </a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="{{ get_url(path='') }}#top">Accueil</a></li>
+                            <li><a href="{{ get_url(path='') }}#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <section>
+                    <h2>{{ page.title }}</h2>
+                    {{ page.content | safe }}
+                </section>
+            </div>
+        </main>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    &copy;2025 <a href="#">{{ config.title }}</a> <span class="right">Fait par {{ config.author }} avec <a href="https://www.getzola.org" title="Zola, Your one-stop static site engine">Zola</a></span>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
