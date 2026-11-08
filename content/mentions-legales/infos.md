@@ -43,14 +43,21 @@ L’association Rebound ne collecte pas directement de données personnelles lor
 Le chargement des lecteurs vidéo intégrés peut entraîner la transmission de certaines données, dont votre adresse IP, aux services concernés. \
 Les modalités propres à YouTube et à [PeerTube](https://joinpeertube.org) sont détaillées ci-dessous.
 
-#### Youtube
+#### YouTube
 
-Cette page intègre des vidéos YouTube fournies par Google Ireland Limited (opérateur) et Google LLC (sous traitant aux États Unis). \
-Au lancement de la lecture, YouTube dépose des cookies publicitaires (VISITOR_INFO1_LIVE, YSC, PREF, IDE) et transmet votre adresse IP, votre user agent et la vidéo visionnée à Google aux États Unis dans le cadre du Data Privacy Framework et des clauses contractuelles types. \
-Nous ne chargeons chaque intégration qu'après acceptation de la catégorie marketing ou vidéo dans nos préférences cookies, et nous utilisons le mode privacy enhanced youtube-nocookie.com chaque fois que possible.
+Cette page intègre des vidéos YouTube fournies par Google Ireland Limited, avec Google LLC comme sous-traitant aux États-Unis.
+
+Au lancement de la lecture, YouTube dépose des cookies publicitaires (`VISITOR_INFO1_LIVE`, `YSC`, `PREF`, `IDE`) et transmet à Google votre adresse IP, l’identifiant de votre navigateur (*user agent*) et des informations sur la vidéo visionnée. Ces données sont transférées aux États-Unis dans le cadre du Data Privacy Framework et des clauses contractuelles types.
+
+Les lecteurs YouTube se chargent uniquement après votre acceptation de la catégorie « Marketing » ou « Vidéo » dans les préférences de cookies. Nous utilisons le mode de confidentialité avancée (`youtube-nocookie.com`) chaque fois que possible.
+
+Pour en savoir plus, consultez les [conditions d’utilisation de YouTube](https://www.youtube.com/t/terms?hl=fr&gl=FR) et les [règles de confidentialité de Google](https://policies.google.com/privacy?hl=fr).
 
 #### Peertube
 
-Le site Rebound intègre des vidéos hébergées sur l’instance PeerTube **[peertube.gegeweb.eu](https://peertube.gegeweb.eu)**. \
+Le site Rebound intègre des vidéos hébergées sur l’instance PeerTube **[peertube.gegeweb.eu](https://peertube.gegeweb.eu)**.
+
 Lorsque le lecteur intégré se charge, votre navigateur transmet votre adresse IP à cette instance pour permettre la lecture de la vidéo. Si la diffusion de pair à pair (P2P) est activée, votre adresse IP peut également être communiquée aux autres utilisateurs qui participent à la diffusion de la même vidéo.
+
+Pour en savoir plus sur Peertube, consultez [C'est quoi Peertube ?](https://joinpeertube.org/fr_FR)
 
